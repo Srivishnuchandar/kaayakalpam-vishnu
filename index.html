@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <title>Ayurveda Landing Page</title>
+    <link rel="stylesheet" href="kaayakalpam.css">
+
+    
+</head>
+<body class="main-page">
+  
+    <div class="container-fluid">
+        <header class="main-heading">
+            <nav class="navbar navbar-expand-xl">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="logo-png.png" alt="Kaayakalpam Logo" class="img-fluid-logo" width="150" /></a>
+                  
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+                        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" id="navbarSupportedContent">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title">KAAYAKALPAM</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <ul class="navbar-nav mx-lg-auto mb-2 mb-lg-0">
+                                <li class="nav-item"><a class="nav-link home-btn" href="index.html">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="kaayakalpamabout.html">About Us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="ouroffering.html">Our Offerings</a></li>
+                                <li class="nav-item"><a class="nav-link" href="benifits.html">Benefits & Testimonials</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <div class="background"></div>  
+
+    <div class="container">
+        <div class="content">
+            <h1>Discover Harmony and Healing with <span>Ayurveda.</span></h1>
+            <p>Ayurveda views health and well-being as a delicate balance between the body, mind, and spirit. It emphasizes the importance of maintaining this balance to achieve optimal health.</p>
+            <button class="more-info">Contact Us</button>
+        </div>
+        <div class="image-container">
+            <img src="massage-8732997.jpg" alt="Ayurveda Ingredients" class="collage">
+        </div>
+    </div>
+
+    <!-- Contact Form Modal -->
+    <div id="contactFormModal" class="contact-modal">
+        <div class="contact-modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Enter your name" required>
+                <input type="number" id="age" placeholder="Enter your age" required>
+                <input type="email" id="email" placeholder="Enter your email" required>
+                <textarea id="message" rows="4" placeholder="Enter your message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bottom-footer">
+        <div class="footer-container-fluid">
+            <div class="footer-bottom">
+                <p> 2025 Kaayakalpam. All Rights Reserved.</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const contactButton = document.querySelector(".more-info");
+            const modal = document.getElementById("contactFormModal");
+            const closeButton = document.querySelector(".close-btn");
+
+            // Ensure modal is hidden on page load
+            modal.style.display = "none";
+
+            // Show modal when "Contact Us" is clicked
+            contactButton.addEventListener("click", function () {
+                modal.style.display = "flex";
+            });
+
+            // Hide modal when close button is clicked
+            closeButton.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            // Hide modal when clicking outside the modal content
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Handle form submission
+            document.getElementById("contactForm").addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent page reload
+
+                let name = document.getElementById("name").value;
+
+                if (name.trim() !== "") {
+                    alert("Thank you for contacting us, " + name + "!");
+
+                    // Clear form fields
+                    document.getElementById("contactForm").reset();
+
+                    // Hide modal after submission
+                    modal.style.display = "none";
+                } else {
+                    alert("Please enter your name before submitting.");
+                }
+            });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
